@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
