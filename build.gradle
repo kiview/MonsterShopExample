@@ -1,0 +1,39 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.M3'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'monstershop'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	runtime 'com.h2database:h2'
+
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+}
