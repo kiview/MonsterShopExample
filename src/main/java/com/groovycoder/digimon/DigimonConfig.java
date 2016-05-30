@@ -37,7 +37,7 @@ public class DigimonConfig {
         factoryBean.setDataSource(digimonDataSource());
         factoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         factoryBean.setPackagesToScan(this.getClass().getPackage().getName());
-        factoryBean.setPersistenceUnitName("pokemon");
+        factoryBean.setPersistenceUnitName("digimon");
 
         return factoryBean;
     }
